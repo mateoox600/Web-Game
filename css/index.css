@@ -1,0 +1,70 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+#screen{ flex-direction: column; }
+
+#header{
+    min-width: 100%;
+    min-height: 60px;
+    background-color: bisque;
+    justify-content: center;
+}
+
+#location-name{
+    padding: 10px;
+    background-color: burlywood;
+    min-width: 10%;
+    font-size: 37.5px;
+    text-align: center;
+}
+
+#go-city-button{
+    align-self: center;
+    justify-self: flex-end;
+    padding: 10px;
+    font-size: 37.5px;
+    background: none;
+    border: none;
+    visibility: hidden;
+}
+
+#go-city-button:focus{ outline: none; }
+
+#navigation{
+    flex-direction: column;
+    width: 95px;
+    background-color: burlywood;
+    border: solid 1px currentColor;
+}
+
+#backpack-button{
+    margin: 10px;
+    width: 75px;
+    height: 75px;
+    border: solid 1px currentColor;
+    background-image: url(../img/backpack_white_outline.png);
+    background-color: green;
+    background-size: 75%;
+    background-position: 50%;
+    background-repeat: no-repeat;
+}
+
+#backpack-button:focus{ outline: none; }
+
+#tavern-button{
+    margin: 10px;
+    width: 75px;
+    height: 75px;
+    border: solid 1px currentColor;
+    background-image: url(../img/beer_white_outline.png);
+    background-color: orange;
+    background-size: 75%;
+    background-position: 50%;
+    background-repeat: no-repeat;
+}
+
+#tavern-button:focus{ outline: none; }

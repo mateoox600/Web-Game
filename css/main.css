@@ -1,0 +1,13 @@
+
+.container{ display: flex; }
+
+.arrow-right-button{
+    transition: 0.2s;
+    border-radius: 50%;
+}
+
+.arrow-right-button:hover{
+    border-radius: 50% 0 50% 50%;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+}
