@@ -4,7 +4,6 @@ body{
     min-width: 100%;
     min-height: 100%;
 }
-
 #screen{ flex-direction: column; }
 
 #header{
@@ -33,6 +32,12 @@ body{
 }
 
 #go-city-button:focus{ outline: none; }
+
+#page{
+    flex-direction: row;
+    min-height: 100%;
+    min-width: 100%;
+}
 
 #navigation{
     flex-direction: column;
@@ -68,3 +73,7 @@ body{
 }
 
 #tavern-button:focus{ outline: none; }
+
+#content{
+    width: 100%;
+}
