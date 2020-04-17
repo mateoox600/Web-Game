@@ -4,27 +4,28 @@
     <meta charset='utf-8'>
     <title>Web Game</title>
     <script src="https://kit.fontawesome.com/92db6f3ec2.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
     <div class="container" id="screen">
 
         <header class="container" id="header">
-            <h1 id="location-name">City</h1>
-            <button id="go-city-button"><i class="fas fa-home" id="go-city"></i></button>
+            <h1 id="location-name">{{ location }}</h1>
+            <button id="go-city-button" v-on:click="go_city" v-if="location !== 'City'"><i class="fas fa-home" id="go-city"></i></button>
         </header>
         
         <div id="page" class="container">
     
             <div class="container" id="navigation">
-                <button id="backpack-button" class="arrow-right-button"></button>
-                <button id="tavern-button" class="arrow-right-button"></button>
+                <button id="backpack-button" class="arrow-right-button" v-on:click="go_backpack"></button>
+                <button id="tavern-button" class="arrow-right-button" v-on:click="go_tavern"></button>
                 <button id="backpack-button" class="arrow-right-button"></button>
                 <button id="backpack-button" class="arrow-right-button"></button>
                 <button id="backpack-button" class="arrow-right-button"></button>
                 <button id="backpack-button" class="arrow-right-button"></button>
             </div>
 
-            <iframe src="prefabs/city/city.html" frameborder="0" id="content"></iframe>
+            <iframe :src="location_url" frameborder="0" id="content"></iframe>
 
         </div>
 

@@ -1,38 +1,44 @@
 
-// importing html elements
-var position_label = document.getElementById("location-name");
-var go_city_button = document.getElementById("go-city-button");
-var backpack_button = document.getElementById("backpack-button");
-var tavern_button = document.getElementById("tavern-button");
+const city = "prefabs/city/city.html";
+const backpack = "prefabs/backpack/backpack.html";
+const tavern = "prefabs/tavern/tavern.html";
+
 var content = document.getElementById("content");
+var app;
 
 function init(){
-    // setting up the click event for the button
-    go_city_button.onclick = function(){ go_city(); };
-    backpack_button.onclick = function(){ go_backpack(); };
-    tavern_button.onclick = function(){ go_tavern(); };
+    // setting up the page
+    app = new Vue({
+        
+        el: '#screen',
+
+        data: {
+            location: 'City',
+            location_url: city
+        },
+
+        methods: {
+
+            go_city: function(){
+                app.location = 'City'
+                app.location_url = city
+            
+            },
+            
+            go_backpack: function(){
+                app.location = 'BackPack'
+                app.location_url = backpack
+            },
+
+            go_tavern: function(){
+                app.location = 'Tavern'
+                app.location_url = tavern
+            
+            },
+
+        }
+    })
 }
 
-// updating html element to go to the city
-function go_city(){
-    position_label.innerHTML = "City";
-    go_city_button.style.visibility = "hidden";
-    content.src = "prefabs/city/city.html";
-
-}
-
-// updating html element to go to the backpack
-function go_backpack(){
-    position_label.innerHTML = "BackPack";
-    go_city_button.style.visibility = "visible";
-    content.src = "prefabs/backpack/backpack.html";
-}
-
-// updating html element to go to the tavern
-function go_tavern(){
-    position_label.innerHTML = "Tavern";
-    go_city_button.style.visibility = "visible";
-    content.src = "prefabs/tavern/tavern.html";
-}
-
+// initialize the page
 init();
